@@ -1,9 +1,8 @@
 package com.fjm.mongo;
 
+import com.fjm.domain.BaseEntity;
+import com.fjm.domain.Fixed;
 import com.fjm.domain.PageList;
-import com.vatti.vcoo.domain.BaseEntity;
-import com.vatti.vcoo.domain.Fixed;
-import com.vatti.vcoo.domain.PageList;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.FindAndModifyOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;

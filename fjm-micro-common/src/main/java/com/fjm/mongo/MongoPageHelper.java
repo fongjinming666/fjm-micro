@@ -1,6 +1,6 @@
 package com.fjm.mongo;
 
-import com.vatti.vcoo.dto.PageResult;
+import com.fjm.dto.PageResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
@@ -141,7 +141,7 @@ public class MongoPageHelper {
      * @param <R>         最终返回时，展现给页面时的一条记录的类型。
      * @return PageResult，一个封装page信息的对象.
      */
-    public <T, R> PageResult<R> pageQuery4Recommend(Criteria criteria,Query query, Class<T> entityClass,
+    public <T, R> PageResult<R> pageQuery4Recommend(Criteria criteria, Query query, Class<T> entityClass,
                                                     Integer pageSize, Integer pageNum, Function<T, R> mapper, String lastId) {
 
         log.debug("query.getQueryObject()==>" + query.getQueryObject());
@@ -173,7 +173,7 @@ public class MongoPageHelper {
         List<Order> orders = Collections.singletonList(new Order(Direction.ASC, ID));
         //final List<T> entityList = mongoTemplate.find(query.with(Sort.by(orders)), entityClass);
         //final Criteria criteria = new Criteria();
-        Aggregation aggregation1 = Aggregation.newAggregation(Aggregation.match(criteria),Aggregation.sample(pageSize));
+        Aggregation aggregation1 = Aggregation.newAggregation(Aggregation.match(criteria), Aggregation.sample(pageSize));
         AggregationResults<T> outputTypeCount1 =
                 mongoTemplate.aggregate(aggregation1, "sr_recipe", entityClass);
 
