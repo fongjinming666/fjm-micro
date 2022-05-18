@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>fjm-micro</artifactId>
+        <groupId>com.fjm</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>${project.artifactId}</name>
+    <description>micro security core 服务</description>
+    <groupId>com.fjm</groupId>
+    <artifactId>fjm-micro-security-core</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <spring-security-oauth.verison>2.3.0.RELEASE</spring-security-oauth.verison>
+        <fjm-micro-common.version>1.0.0</fjm-micro-common.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fjm</groupId>
+            <artifactId>fjm-micro-common</artifactId>
+            <version>${fjm-micro-common.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>${spring-security-oauth.verison}</version>
+        </dependency>
+    </dependencies>
+</project>
